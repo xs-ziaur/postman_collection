@@ -2092,7 +2092,7 @@
 					]
 				},
 				{
-					"name": "delete wp users feature limit",
+					"name": "get wp users feature limit delete",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -2132,7 +2132,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": \"7\"\n}"
+							"raw": "{\n    \"user_id\": \"6\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/delete_user_feature_limit/",
@@ -2191,7 +2191,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"user_id\": \"7\"\n}"
+									"raw": "{\n    \"user_id\": \"6\"\n}"
 								},
 								"url": {
 									"raw": "{{url}}/delete_user_feature_limit/",
@@ -2221,7 +2221,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 05 Oct 2022 05:10:11 GMT"
+									"value": "Tue, 04 Oct 2022 07:06:49 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2273,7 +2273,7 @@
 								},
 								{
 									"key": "X-WP-Nonce",
-									"value": "9f08b00a7a"
+									"value": "b30cb2b9a1"
 								},
 								{
 									"key": "Allow",
@@ -2285,7 +2285,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": [\n        \"Successfully deleted\"\n    ],\n    \"data\": [\n        true,\n        true,\n        {\n            \"id\": 2,\n            \"name\": \"test-test\",\n            \"user_email\": \"test_genie@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"test-test2\",\n            \"user_email\": \"test_genie2@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        true,\n        {\n            \"id\": 5,\n            \"name\": \"test3-test3\",\n            \"user_email\": \"test3@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"name\": \"xs-ziaur\",\n            \"user_email\": \"ziaur@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": 1\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": 10\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": 10\n                }\n            ]\n        },\n        true\n    ]\n}"
+							"body": "{\n    \"status\": \"fail\",\n    \"message\": [\n        \"User feature limit not deleted\"\n    ],\n    \"data\": [\n        {\n            \"id\": 6,\n            \"name\": \"test-4\",\n            \"user_email\": \"test4@xpeedstudio.com\",\n            \"limits\": []\n        },\n        {\n            \"id\": 7,\n            \"name\": \"test-5\",\n            \"user_email\": \"test5@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"0\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"2\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"test-test\",\n            \"user_email\": \"test_genie@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"test-test2\",\n            \"user_email\": \"test_genie2@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"test2-test3\",\n            \"user_email\": \"tes3@xpeedstudio.com\",\n            \"limits\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": \"test3-test3\",\n            \"user_email\": \"test3@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"name\": \"xs-ziaur\",\n            \"user_email\": \"ziaur@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": 1\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": 10\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": 10\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"name\": \"ziaur-rahmna\",\n            \"user_email\": \"ziaur1@xpeedstudio.com\",\n            \"limits\": []\n        }\n    ]\n}"
 						}
 					]
 				}
