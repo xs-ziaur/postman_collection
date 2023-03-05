@@ -1,0 +1,1654 @@
+{
+	"info": {
+		"_postman_id": "c9b79cd8-2321-4aec-8273-3af34376294d",
+		"name": "Paddle API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20672469"
+	},
+	"item": [
+		{
+			"name": "Checkout API",
+			"item": [
+				{
+					"name": "Get Order Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://checkout.paddle.com/api/1.0/order/?checkout_id&callback",
+							"protocol": "https",
+							"host": [
+								"checkout",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"order",
+								""
+							],
+							"query": [
+								{
+									"key": "checkout_id",
+									"value": ""
+								},
+								{
+									"key": "callback",
+									"value": ""
+								}
+							]
+						},
+						"description": "Generate a custom checkout URL based on extensive customisation options."
+					},
+					"response": []
+				},
+				{
+					"name": "Send License/Purchase Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://checkout.paddle.com/api/2.0/user/history?vendor_id={{vendor_id}}&email=&product_id=",
+							"protocol": "https",
+							"host": [
+								"checkout",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"user",
+								"history"
+							],
+							"query": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}"
+								},
+								{
+									"key": "email",
+									"value": ""
+								},
+								{
+									"key": "product_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://checkout.paddle.com/api/2.0/prices/?product_ids&customer_country&customer_ip&coupons",
+							"protocol": "https",
+							"host": [
+								"checkout",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"prices",
+								""
+							],
+							"query": [
+								{
+									"key": "product_ids",
+									"value": ""
+								},
+								{
+									"key": "customer_country",
+									"value": ""
+								},
+								{
+									"key": "customer_ip",
+									"value": ""
+								},
+								{
+									"key": "coupons",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product API",
+			"item": [
+				{
+					"name": "List Products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/product/get_products",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"product",
+								"get_products"
+							]
+						},
+						"description": "Retrieve a list of Products from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Generate License",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "allowed_uses",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expires_at",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/product/generate_license",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"product",
+								"generate_license"
+							]
+						},
+						"description": "Generate a licence code for a given Product in your Paddle Account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Transactions by User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/user/:user_id/transactions",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"user",
+								":user_id",
+								"transactions"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieve a list of transactions for a user from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Transactions by Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/:subscription_id/transactions",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								":subscription_id",
+								"transactions"
+							],
+							"variable": [
+								{
+									"key": "subscription_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieve a list of transactions for a subscription from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Transactions by Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/order/:order_id/transactions",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"order",
+								":order_id",
+								"transactions"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieve a list of transactions for an order from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Transactions by Checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/checkout/:checkout_id/transactions",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"checkout",
+								":checkout_id",
+								"transactions"
+							],
+							"variable": [
+								{
+									"key": "checkout_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieve a list of transactions for a checkout from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Coupons",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/product/list_coupons",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"product",
+								"list_coupons"
+							]
+						},
+						"description": "Retrieve a list of Coupons for a specific Product from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "coupon_code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "coupon_prefix",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "num_coupons",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "coupon_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "product_ids",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "discount_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "discount_amount",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "allowed_uses",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expires",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "minimum_threshold",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "group",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.1/product/create_coupon",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.1",
+								"product",
+								"create_coupon"
+							]
+						},
+						"description": "Generate a coupon for a specific Product from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "coupon_code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "group",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "new_coupon_code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "new_group",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "product_ids",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expires",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "allowed_uses",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "minimum_threshold",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "discount_amount",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.1/product/update_coupon",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.1",
+								"product",
+								"update_coupon"
+							]
+						},
+						"description": "Update a coupon from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "coupon_code",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/product/delete_coupon",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"product",
+								"delete_coupon"
+							]
+						},
+						"description": "Delete a coupon from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pay Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "product_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "webhook_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "prices",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_prices",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "trial_days",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "custom_message",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "coupon_code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "discountable",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "return_url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity_variable",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "expires",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "affiliates",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_affiliate_limit",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "customer_email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "customer_country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "customer_postcode",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "passthrough",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_number",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_company_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_street",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_state",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_country",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vat_postcode",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/product/generate_pay_link",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"product",
+								"generate_pay_link"
+							]
+						},
+						"description": "Generate a custom checkout URL based on extensive customisation options."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription API",
+			"item": [
+				{
+					"name": "List Plans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "plan",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/plans",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"plans"
+							]
+						},
+						"description": "Retrieve a list of Subscriptions from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "plan_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plan_trial_days",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plan_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plan_length",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "main_currency_code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "initial_price_usd",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_price_usd",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "initial_price_gbp",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_price_gbp",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "initial_price_eur",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_price_eur",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/plans_create",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"plans_create"
+							]
+						},
+						"description": "Creates a new subscription billing plan with the supplied parameters in your Paddle Account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plan_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/users",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"users"
+							]
+						},
+						"description": "Retrieve a list of Users subscribed to any of your Subscription Plans in your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/users_cancel",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"users_cancel"
+							]
+						},
+						"description": "Cancel a Subscription in your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "plan_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bill_immediately",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "prorate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "keep_modifiers",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/users/update",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"users",
+								"update"
+							]
+						},
+						"description": "Move the users on one Subscription Plan to another in your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Preview Subscription Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "plan_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "recurring_price",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bill_immediately",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "prorate",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "keep_modifiers",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/preview_update",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"preview_update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Modifier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "modifier_recurring",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "modifier_amount",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "modifier_description",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/modifiers/create",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"modifiers",
+								"create"
+							]
+						},
+						"description": "Add a modifier to a Subscription Plan in your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Modifier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "modifier_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/modifiers/delete",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"modifiers",
+								"delete"
+							]
+						},
+						"description": "Remove a modifier to a Subscription Plan in your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Modifiers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "plan_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/modifiers",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"modifiers"
+							]
+						},
+						"description": "List all the modifiers to a Subscription Plan in your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "List Payments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "plan",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_paid",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_one_off_charge",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/payments",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"payments"
+							]
+						},
+						"description": "Retrieve a list of all of the paid and upcoming (unpaid) payments from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Reschedule Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "payment_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/payments_reschedule",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								"payments_reschedule"
+							]
+						},
+						"description": "Change the due date on an upcoming subscription payment from your Paddle account."
+					},
+					"response": []
+				},
+				{
+					"name": "Create One-off Charge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "charge_name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/subscription/:subscription_id/charge",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"subscription",
+								":subscription_id",
+								"charge"
+							],
+							"variable": [
+								{
+									"key": "subscription_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alert API",
+			"item": [
+				{
+					"name": "Get Webhook History",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "{{vendor_id}}",
+									"type": "text"
+								},
+								{
+									"key": "vendor_auth_code",
+									"value": "{{vendor_auth_code}}",
+									"type": "text"
+								},
+								{
+									"key": "page",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "alerts_per_page",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "query_head",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://vendors.paddle.com/api/2.0/alert/webhooks",
+							"protocol": "https",
+							"host": [
+								"vendors",
+								"paddle",
+								"com"
+							],
+							"path": [
+								"api",
+								"2.0",
+								"alert",
+								"webhooks"
+							]
+						},
+						"description": "Retrieve a list of past Events and Alerts from your Paddle account."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

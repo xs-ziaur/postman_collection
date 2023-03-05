@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "0324fc9d-892b-4e79-aec4-3686b1077f4e",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20672469"
+	},
+	"item": [
+		{
+			"name": "https://suggestqueries.google.com/complete/search?dpr=5&cp=1&xssi=f&client=firefox&q=computer science",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://suggestqueries.google.com/complete/search?dpr=5&cp=1&xssi=f&client=firefox&q=computer science",
+					"protocol": "https",
+					"host": [
+						"suggestqueries",
+						"google",
+						"com"
+					],
+					"path": [
+						"complete",
+						"search"
+					],
+					"query": [
+						{
+							"key": "dpr",
+							"value": "5"
+						},
+						{
+							"key": "cp",
+							"value": "1"
+						},
+						{
+							"key": "xssi",
+							"value": "f"
+						},
+						{
+							"key": "client",
+							"value": "firefox"
+						},
+						{
+							"key": "q",
+							"value": "computer science"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

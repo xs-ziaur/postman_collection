@@ -49,34 +49,13 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "site_name",
-									"value": "wc-saas-manager.test",
-									"type": "text"
-								},
-								{
-									"key": "user_id",
-									"value": "2",
-									"type": "text"
-								},
-								{
-									"key": "serp_analysis",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "keyword_lookup",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "word_generate",
-									"value": "100",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"1\",\n    \"site_name\": \"wc-saas-manager.test\",\n    \"word_generate\": 10,\n    \"serp_analysis\": 1,\n    \"keyword_lookup\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/user_limit_set/",
@@ -736,34 +715,13 @@
 									}
 								],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "site_name",
-											"value": "wc-saas-manager.test",
-											"type": "text"
-										},
-										{
-											"key": "user_id",
-											"value": "2",
-											"type": "text"
-										},
-										{
-											"key": "serp_analysis",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "keyword_lookup",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "word_generate",
-											"value": "100",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1\",\n    \"site_name\": \"wc-saas-manager.test\",\n    \"word_generate\": 10,\n    \"serp_analysis\": 1,\n    \"keyword_lookup\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/user_limit_set/",
@@ -786,7 +744,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 02 Oct 2022 06:14:38 GMT"
+									"value": "Tue, 04 Oct 2022 02:32:42 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -838,7 +796,7 @@
 								},
 								{
 									"key": "X-WP-Nonce",
-									"value": "2f70fb71b3"
+									"value": "b30cb2b9a1"
 								},
 								{
 									"key": "Allow",
@@ -850,7 +808,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": [\n        \"No data to update\"\n    ],\n    \"data\": {\n        \"id\": \"2\",\n        \"data\": [\n            {\n                \"key\": \"serp_analysis\",\n                \"title\": \"Serp Analysis\",\n                \"value\": \"1\"\n            },\n            {\n                \"key\": \"keyword_lookup\",\n                \"title\": \"Keyword Lookup\",\n                \"value\": \"1\"\n            },\n            {\n                \"key\": \"word_generate\",\n                \"title\": \"Word Generate\",\n                \"value\": \"100\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"message\": [\n        \"No data to update\"\n    ],\n    \"data\": {\n        \"id\": \"1\",\n        \"name\": \"xs-ziaur\",\n        \"email\": \"ziaur@xpeedstudio.com\",\n        \"data\": [\n            {\n                \"key\": \"serp_analysis\",\n                \"title\": \"Serp Analysis\",\n                \"value\": 1\n            },\n            {\n                \"key\": \"keyword_lookup\",\n                \"title\": \"Keyword Lookup\",\n                \"value\": 10\n            },\n            {\n                \"key\": \"word_generate\",\n                \"title\": \"Word Generate\",\n                \"value\": 10\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1694,6 +1652,640 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"siteUsagesLimit\": {\n            \"wc-saas-manager.test\": {\n                \"limits\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": \"~\"\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": \"~\"\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": \"~\"\n                    }\n                ],\n                \"usages\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": 16\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": 1\n                    }\n                ]\n            }\n        },\n        \"subscriptionUsagesLimit\": {\n            \"subs3947\": {\n                \"id\": 3947,\n                \"type\": \"subscription\",\n                \"level\": \"subs\",\n                \"limits\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": \"5\"\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": \"1500\"\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": \"10\"\n                    }\n                ],\n                \"status\": \"active\",\n                \"usages\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": 16\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": 1\n                    }\n                ]\n            }\n        },\n        \"userUsageLimit\": {\n            \"2\": {\n                \"limits\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": \"2\"\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": \"100\"\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": \"2\"\n                    }\n                ],\n                \"usages\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": 0\n                    }\n                ]\n            },\n            \"3\": {\n                \"limits\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": \"2\"\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": \"100\"\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": \"2\"\n                    }\n                ],\n                \"usages\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": 0\n                    }\n                ]\n            },\n            \"7\": {\n                \"limits\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": \"0\"\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": \"100\"\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": \"2\"\n                    }\n                ],\n                \"usages\": [\n                    {\n                        \"key\": \"serp_analysis\",\n                        \"title\": \"Serp Analysis\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"word_generate\",\n                        \"title\": \"Word Generate\",\n                        \"value\": 0\n                    },\n                    {\n                        \"key\": \"keyword_lookup\",\n                        \"title\": \"Keyword Lookup\",\n                        \"value\": 0\n                    }\n                ]\n            }\n        }\n    },\n    \"message\": [\n        \"Successfully fetched\"\n    ],\n    \"traceCode\": \"c3VjY2Vzc2Z1bGx5IGZldGNoZWQu\"\n}"
+						}
+					]
+				},
+				{
+					"name": "wp user search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "{{cookie}}",
+								"type": "text"
+							},
+							{
+								"key": "Site-Token",
+								"value": "{{site_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-WP-Nonce",
+								"value": "{{wp_nonce}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "s",
+									"value": "tes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user_search/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_search",
+								""
+							],
+							"query": [
+								{
+									"key": "s",
+									"value": "xs",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									},
+									{
+										"key": "Auth-Token",
+										"value": "{{auth_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json; charset=UTF-8",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{cookie}}",
+										"type": "text"
+									},
+									{
+										"key": "Site-Token",
+										"value": "{{site_token}}",
+										"type": "text"
+									},
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_nonce}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ids",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "s",
+											"value": "tes",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user_search/?s=tes",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user_search",
+										""
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "s",
+											"value": "tes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 08:23:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "faa0db54e3"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": [\n        \"Successfully updated\"\n    ],\n    \"data\": [\n        {\n            \"label\": \"test-4\",\n            \"value\": \"6\"\n        },\n        {\n            \"label\": \"test-5\",\n            \"value\": \"7\"\n        },\n        {\n            \"label\": \"test-test\",\n            \"value\": \"2\"\n        },\n        {\n            \"label\": \"test-test2\",\n            \"value\": \"3\"\n        },\n        {\n            \"label\": \"test2-test3\",\n            \"value\": \"4\"\n        },\n        {\n            \"label\": \"test3-test3\",\n            \"value\": \"5\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get wp users feature limit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "{{cookie}}",
+								"type": "text"
+							},
+							{
+								"key": "Site-Token",
+								"value": "{{site_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-WP-Nonce",
+								"value": "{{wp_nonce}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/all_user_feature_limit/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"all_user_feature_limit",
+								""
+							],
+							"query": [
+								{
+									"key": "s",
+									"value": "xs",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									},
+									{
+										"key": "Auth-Token",
+										"value": "{{auth_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json; charset=UTF-8",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{cookie}}",
+										"type": "text"
+									},
+									{
+										"key": "Site-Token",
+										"value": "{{site_token}}",
+										"type": "text"
+									},
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_nonce}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ids",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "s",
+											"value": "tes",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/user_search/?s=tes",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user_search",
+										""
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "s",
+											"value": "tes"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 08:23:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "faa0db54e3"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": [\n        \"Successfully updated\"\n    ],\n    \"data\": [\n        {\n            \"label\": \"test-4\",\n            \"value\": \"6\"\n        },\n        {\n            \"label\": \"test-5\",\n            \"value\": \"7\"\n        },\n        {\n            \"label\": \"test-test\",\n            \"value\": \"2\"\n        },\n        {\n            \"label\": \"test-test2\",\n            \"value\": \"3\"\n        },\n        {\n            \"label\": \"test2-test3\",\n            \"value\": \"4\"\n        },\n        {\n            \"label\": \"test3-test3\",\n            \"value\": \"5\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "delete wp users feature limit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Auth-Token",
+								"value": "{{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "{{cookie}}",
+								"type": "text"
+							},
+							{
+								"key": "Site-Token",
+								"value": "{{site_token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-WP-Nonce",
+								"value": "{{wp_nonce}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"7\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/delete_user_feature_limit/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"delete_user_feature_limit",
+								""
+							],
+							"query": [
+								{
+									"key": "s",
+									"value": "xs",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									},
+									{
+										"key": "Auth-Token",
+										"value": "{{auth_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json; charset=UTF-8",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{cookie}}",
+										"type": "text"
+									},
+									{
+										"key": "Site-Token",
+										"value": "{{site_token}}",
+										"type": "text"
+									},
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_nonce}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"7\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/delete_user_feature_limit/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"delete_user_feature_limit",
+										""
+									],
+									"query": [
+										{
+											"key": "s",
+											"value": "xs",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Oct 2022 05:10:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "9f08b00a7a"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": [\n        \"Successfully deleted\"\n    ],\n    \"data\": [\n        true,\n        true,\n        {\n            \"id\": 2,\n            \"name\": \"test-test\",\n            \"user_email\": \"test_genie@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"test-test2\",\n            \"user_email\": \"test_genie2@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        true,\n        {\n            \"id\": 5,\n            \"name\": \"test3-test3\",\n            \"user_email\": \"test3@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": \"1\"\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": \"100\"\n                }\n            ]\n        },\n        {\n            \"id\": 1,\n            \"name\": \"xs-ziaur\",\n            \"user_email\": \"ziaur@xpeedstudio.com\",\n            \"limits\": [\n                {\n                    \"key\": \"serp_analysis\",\n                    \"title\": \"Serp Analysis\",\n                    \"value\": 1\n                },\n                {\n                    \"key\": \"keyword_lookup\",\n                    \"title\": \"Keyword Lookup\",\n                    \"value\": 10\n                },\n                {\n                    \"key\": \"word_generate\",\n                    \"title\": \"Word Generate\",\n                    \"value\": 10\n                }\n            ]\n        },\n        true\n    ]\n}"
 						}
 					]
 				}

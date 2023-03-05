@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "85217a3f-71d7-4017-a5f1-81c45d82fd5a",
+		"name": "local_appsumo_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20672469"
+	},
+	"item": [
+		{
+			"name": "get access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"access-token\", jsonData.data.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "xs-ziaur",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/jwt-auth/v1/token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"jwt-auth",
+						"v1",
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get access token success response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "xs-ziaur",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "wc-saas-manager.test/wp-json/jwt-auth/v1/token",
+							"host": [
+								"wc-saas-manager",
+								"test"
+							],
+							"path": [
+								"wp-json",
+								"jwt-auth",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.23.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 03 Jan 2023 06:44:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.30"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Link",
+							"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "X-WP-Total, X-WP-TotalPages, Link"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+						},
+						{
+							"key": "Allow",
+							"value": "POST"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"code\": \"jwt_auth_valid_credential\",\n    \"message\": \"Credential is valid\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vd2Mtc2Fhcy1tYW5hZ2VyLnRlc3QiLCJpYXQiOjE2NzI3MjgyNDksIm5iZiI6MTY3MjcyODI0OSwiZXhwIjoxNjczMzMzMDQ5LCJkYXRhIjp7InVzZXIiOnsiaWQiOjEsImRldmljZSI6IiIsInBhc3MiOiIxODAwOWIzOGQ4NGI3ZWM5OTVlOGI5OTc2NTE3ODc1MSJ9fX0.8vnJJeqcFUcTENEmsoSr71fCL1I3lMkNLnN7hGWYnEY\",\n        \"id\": 1,\n        \"email\": \"ziaur@xpeedstudio.com\",\n        \"nicename\": \"xs-ziaur\",\n        \"firstName\": \"Ziaur\",\n        \"lastName\": \"Rahman\",\n        \"displayName\": \"xs-ziaur\"\n    }\n}"
+				},
+				{
+					"name": "get access token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "xs-ziaur",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/jwt-auth/v1/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jwt-auth",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.23.1"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 03 Jan 2023 08:16:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.30"
+						},
+						{
+							"key": "X-WP-DoingItWrong",
+							"value": "register_rest_route (since 5.5.0; The REST API route definition for <code>appsumo_licensing/v1/notification</code> is missing the required <code>permission_callback</code> argument. For REST API routes that are intended to be public, use <code>__return_true</code> as the permission callback.)"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Link",
+							"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "X-WP-Total, X-WP-TotalPages, Link"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+						},
+						{
+							"key": "Allow",
+							"value": "POST"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vd2Mtc2Fhcy1tYW5hZ2VyLnRlc3QiLCJpYXQiOjE2NzI3MzM4MTMsIm5iZiI6MTY3MjczMzgxMywiZXhwIjoxNjczMzM4NjEzLCJkYXRhIjp7InVzZXIiOnsiaWQiOjEsImRldmljZSI6IiIsInBhc3MiOiIxODAwOWIzOGQ4NGI3ZWM5OTVlOGI5OTc2NTE3ODc1MSJ9fX0.J9sl8IjGKFuT-iHIL2Sz99m5HHrxCGLApKYVeIdRhbo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "activation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "activate",
+							"type": "text"
+						},
+						{
+							"key": "plan_id",
+							"value": "appsumo_tier1",
+							"type": "text"
+						},
+						{
+							"key": "uuid",
+							"value": "65b9528a-702d-4326-9b23-3e0c37ce4553",
+							"type": "text"
+						},
+						{
+							"key": "activation_email",
+							"value": "taco@appsumo.com",
+							"type": "text"
+						},
+						{
+							"key": "invoice_item_uuid",
+							"value": "01ae3d93-ec5f-44a8-b4b9-093cbd662164",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/appsumo_licensing/v1/notification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"appsumo_licensing",
+						"v1",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enhance Tier (Upgrade)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "activate",
+							"type": "text"
+						},
+						{
+							"key": "plan_id",
+							"value": "appsumo_tier1",
+							"type": "text"
+						},
+						{
+							"key": "uuid",
+							"value": "65b9528a-702d-4326-9b23-3e0c37ce4553",
+							"type": "text"
+						},
+						{
+							"key": "activation_email",
+							"value": "taco@appsumo.com",
+							"type": "text"
+						},
+						{
+							"key": "invoice_item_uuid",
+							"value": "01ae3d93-ec5f-44a8-b4b9-093cbd662164",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/appsumo_licensing/v1/notification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"appsumo_licensing",
+						"v1",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reduce Tier (Downgrade)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "activate",
+							"type": "text"
+						},
+						{
+							"key": "plan_id",
+							"value": "appsumo_tier1",
+							"type": "text"
+						},
+						{
+							"key": "uuid",
+							"value": "65b9528a-702d-4326-9b23-3e0c37ce4553",
+							"type": "text"
+						},
+						{
+							"key": "activation_email",
+							"value": "taco@appsumo.com",
+							"type": "text"
+						},
+						{
+							"key": "invoice_item_uuid",
+							"value": "01ae3d93-ec5f-44a8-b4b9-093cbd662164",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/appsumo_licensing/v1/notification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"appsumo_licensing",
+						"v1",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refund",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "activate",
+							"type": "text"
+						},
+						{
+							"key": "plan_id",
+							"value": "appsumo_tier1",
+							"type": "text"
+						},
+						{
+							"key": "uuid",
+							"value": "65b9528a-702d-4326-9b23-3e0c37ce4553",
+							"type": "text"
+						},
+						{
+							"key": "activation_email",
+							"value": "taco@appsumo.com",
+							"type": "text"
+						},
+						{
+							"key": "invoice_item_uuid",
+							"value": "01ae3d93-ec5f-44a8-b4b9-093cbd662164",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/appsumo_licensing/v1/notification",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"appsumo_licensing",
+						"v1",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
