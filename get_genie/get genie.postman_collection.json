@@ -3301,7 +3301,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 05 Mar 2023 09:44:16 GMT"
+									"value": "Wed, 08 Mar 2023 09:00:39 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -3353,7 +3353,7 @@
 								},
 								{
 									"key": "X-WP-Nonce",
-									"value": "bec10c572c"
+									"value": "2bde5be5c8"
 								},
 								{
 									"key": "Allow",
@@ -3365,7 +3365,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"getgenie_chats\": [\n            {\n                \"id\": 8871,\n                \"messages\": [\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"I'm board, what should we do?\"\n                    },\n                    {\n                        \"role\": \"assistant\",\n                        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    }\n                ],\n                \"output\": [],\n                \"creativityLevel\": \"1\",\n                \"templateSlug\": \"getgenie-chat\",\n                \"templateTitle\": \"Getgenie chat\",\n                \"outputSize\": \"medium\",\n                \"date\": \"2023-03-05 04:32:20\",\n                \"user\": \"xs-ziaur\"\n            }\n        ],\n        \"total_pages\": 1\n    },\n    \"message\": [\n        \"Fetched messages list successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"getgenie_chats\": [\n            {\n                \"id\": 8947,\n                \"messages\": [\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"I'm board, what should we do?\"\n                    },\n                    {\n                        \"role\": \"assistant\",\n                        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    }\n                ],\n                \"templateSlug\": \"blog-wizard-title\",\n                \"date\": \"2023-03-08 08:59:56\",\n                \"user\": \"xs-ziaur\"\n            }\n        ],\n        \"total_pages\": 1\n    },\n    \"message\": [\n        \"Fetched messages list successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
 						}
 					]
 				},
@@ -3414,22 +3414,19 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{url}}/geniechat/list?&page=1",
+							"raw": "{{url}}/geniechat/clear",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"geniechat",
-								"list"
+								"clear"
 							],
 							"query": [
 								{
 									"key": null,
-									"value": null
-								},
-								{
-									"key": "page",
-									"value": "1"
+									"value": null,
+									"disabled": true
 								}
 							]
 						}
@@ -3616,129 +3613,6 @@
 					},
 					"response": [
 						{
-							"name": "getgenie chat clear success response",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "*/*",
-										"type": "text"
-									},
-									{
-										"key": "Auth-Token",
-										"value": "{{auth_token}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-type",
-										"value": "application/json; charset=UTF-8",
-										"type": "text"
-									},
-									{
-										"key": "Cookie",
-										"value": "{{cookie}}",
-										"type": "text"
-									},
-									{
-										"key": "Site-Token",
-										"value": "{{site_token}}",
-										"type": "text"
-									},
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_nonce}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/geniechat/clear",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"geniechat",
-										"clear"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx/1.23.1"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 05 Mar 2023 04:14:01 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/7.4.30"
-								},
-								{
-									"key": "X-Robots-Tag",
-									"value": "noindex"
-								},
-								{
-									"key": "Link",
-									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "X-WP-Total, X-WP-TotalPages, Link"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
-								},
-								{
-									"key": "Expires",
-									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, must-revalidate, max-age=0"
-								},
-								{
-									"key": "X-WP-Nonce",
-									"value": "bec10c572c"
-								},
-								{
-									"key": "Allow",
-									"value": "GET, POST, PUT, PATCH, DELETE"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"total_posts\": 0,\n        \"total_deleted_posts\": 0\n    },\n    \"message\": [\n        \"Cleared all history successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
-						},
-						{
 							"name": "getgenie chat create",
 							"originalRequest": {
 								"method": "POST",
@@ -3864,6 +3738,133 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": \"success\",\n    \"data\": [],\n    \"message\": [\n        \"Chat created successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
+						},
+						{
+							"name": "update post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									},
+									{
+										"key": "Auth-Token",
+										"value": "{{auth_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-type",
+										"value": "application/json; charset=UTF-8",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{cookie}}",
+										"type": "text"
+									},
+									{
+										"key": "Site-Token",
+										"value": "{{site_token}}",
+										"type": "text"
+									},
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_nonce}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\" : 8947,\n    \"messages\": \n    [\n        {\n        \"role\": \"user\", \n        \"content\": \"I'm board, what should we do?\"\n        },\n        {\n        \"role\": \"assistant\",\n        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n        }\n    ],\n    \"templateSlug\": \"blog-wizard-title\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/geniechat/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"geniechat",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Mar 2023 09:00:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "2bde5be5c8"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": null
 						}
 					]
 				}
@@ -3913,7 +3914,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"competitorData\": [{\"url\": \"www.rohom.com\"}, {\"url\": \"www.rohom.com\"}],\"questionAsked\": \"\"}",
+							"raw": "{\"questionAsked\": \"['url': 'www.test212.com']\", \"new_data\": \"shishir\"}",
 							"options": {
 								"raw": {
 									"language": "json"
