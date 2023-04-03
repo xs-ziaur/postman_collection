@@ -1454,38 +1454,7 @@
 					"name": "site usage limit",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "*/*",
-								"type": "text"
-							},
-							{
-								"key": "Auth-Token",
-								"value": "{{auth-token}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-type",
-								"value": "application/json; charset=UTF-8",
-								"type": "text"
-							},
-							{
-								"key": "Cookie",
-								"value": "{{cookie}}",
-								"type": "text"
-							},
-							{
-								"key": "Site-Token",
-								"value": "{{site-token}}",
-								"type": "text"
-							},
-							{
-								"key": "X-WP-Nonce",
-								"value": "{{wp_nonce}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
@@ -3441,8 +3410,8 @@
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"\"\n}"
+							"mode": "formdata",
+							"formdata": []
 						},
 						"url": {
 							"raw": "{{url}}/geniechat/clear",
@@ -3629,7 +3598,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\" : \"\",\n    \"messages\": \n    [\n        {\n        \"role\": \"user\", \n        \"content\": \"I'm board, what should we do?\"\n        },\n        {\n        \"role\": \"assistant\",\n        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n        },\n        {\n        \"role\": \"user\", \n        \"content\": \"idk12, what type of movies do you like? i like adult ones, hehehe\"\n        }\n    ],\n    \"templateSlug\": \"blog-wizard-title\",\n    \"limitUsageStats\": \"\"\n}"
+							"raw": "{\n    \"input\": {\n        \"keyword\": \"ai writers\",\n        \"inputContext\": \"\"\n    }, \n    \"messages\": [\n    {\n      \"role\": \"user\", \n      \"content\": \"I'm board, what should we do?\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n    },\n    {\n      \"role\": \"user\", \n      \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n    }\n  ],\n    \"templateSlug\": \"blog-wizard-title\",\n    \"keyword\": \"ai writers\",\n    \"inputContext\": \"\",\n    \"selectedLanguage\": \"en\",\n    \"creativity\": 3,\n    \"selectedTone\": \"Standard\",\n    \"resultCount\": 2,\n    \"output\": [\n        \"Unleashing the Power of AI Writers: What You Need to Know\",\n        \"Unveiling the Future of Content Creation: AI Writers\"\n    ],\n    \"limitUsageStats\": {\n        \"usagePercentage\": {},\n        \"subscriptionUsagesLimit\": {\n            \"subs9000\": {\n                \"id\": 9000,\n                \"product_variation_id\": 1228,\n                \"level\": \"subs\",\n                \"type\": \"subscription\",\n                \"status\": \"active\",\n                \"limits\": {\n                    \"word_generate\": \"160000\",\n                    \"keyword_lookup\": \"500\",\n                    \"serp_analysis\": \"200\"\n                },\n                \"life\": [\n                    1,\n                    \"month\"\n                ],\n                \"expires_at\": \"2023-03-16\",\n                \"usages\": {\n                    \"serp_analysis\": 177,\n                    \"word_generate\": 81667,\n                    \"keyword_lookup\": 184\n                }\n            }\n        },\n        \"siteUsagesLimit\": {\n            \"geniewporg.test\": {\n                \"limits\": {\n                    \"word_generate\": \"~\",\n                    \"keyword_lookup\": \"~\",\n                    \"serp_analysis\": \"~\"\n                },\n                \"usages\": {\n                    \"keyword_lookup\": 30,\n                    \"word_generate\": 2561,\n                    \"serp_analysis\": 64\n                }\n            }\n        },\n        \"currentUsage\": {\n            \"word_generate\": 19\n        }\n    },\n    \"templateType\": \"writer-wizard\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/geniechat/create",
@@ -3945,7 +3914,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"competitorData\": \"\", \"questionAsked\": \"['url': 'www.test212.com']\", \"new_data\": \"shishir\"}",
+							"raw": "{\"questionAsked\": \"['url': 'www.test212.com']\", \"new_data\": \"shishir\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4001,10 +3970,6 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
 									"raw": "{{url}}/limit_usage_stats/",
 									"host": [
