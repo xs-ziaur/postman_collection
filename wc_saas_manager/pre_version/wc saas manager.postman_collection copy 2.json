@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "90a39491-021d-41cd-8942-70bb53f5441c",
+		"_postman_id": "3f864e28-d75f-4e55-9e3e-0524d6359de7",
 		"name": "wc saas manager",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1711936"
@@ -1718,18 +1718,117 @@
 					]
 				},
 				{
+					"name": "license active (webview)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const sdk = require('postman-collection');\r",
+									"let url = new sdk.Url(pm.collectionVariables.get(\"url\"));\r",
+									"console.log(url);\r",
+									"pm.request.headers.add({key: 'User-Agent', value: `WordPress/6.1.1; ${url.getHost()}`});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-WP-Nonce",
+								"value": "{{wp_nonce}}",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "{{cookie}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"license\": \"GNI01-58f1b7cad9acc5be2daa0608497c9081fe961357\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/webview/license_active",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"webview",
+								"license_active"
+							]
+						},
+						"description": "This request for license activation of webview. which end point is as same as getgenie license. Just prefix is change from \"manage-sites\" to \"webview\". "
+					},
+					"response": [
+						{
+							"name": "license active (webview)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_rest}}",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{login_cookie}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"license\": \"GNI01-07959ebaa87d03d02d2f2bae3caa5d91dec72968\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{wc-saas-manager}}/wp-json/v1/webview/license_active",
+									"host": [
+										"{{wc-saas-manager}}"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"webview",
+										"license_active"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
 					"name": "Get webview",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/list?page=2",
+							"raw": "{{url}}/webview/list?page=2",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"list"
 							],
@@ -1782,17 +1881,6 @@
 							"body": ""
 						}
 					]
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -3248,6 +3336,929 @@
 									"key": "site_name",
 									"value": "test.com"
 								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "no_api_found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/usage-stats/userr",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"usage-stats",
+										"userr"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 05:54:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"fail\",\n    \"message\": [\n        \"No route found.\"\n    ],\n    \"traceCode\": \"Tm8gcm91dGUgZm91bmQu\"\n}"
+						},
+						{
+							"name": "rest_no_route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/usage-stats/user-",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"usage-stats",
+										"user-"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 05:56:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"rest_no_route\",\n    \"message\": \"No route was found matching the URL and request method.\",\n    \"data\": {\n        \"status\": 404\n    }\n}"
+						},
+						{
+							"name": "Successfull response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/usage-stats/user",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"usage-stats",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 05:56:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"packages\": {\n        \"isFree\": false,\n        \"type\": \"subscription\",\n        \"domainLimit\": \"5\",\n        \"featureLimit\": {\n            \"AI Writing (Words)\": \"50000\",\n            \"Keyword Lookup\": \"300\",\n            \"SERP Competitor Analysis\": \"100\"\n        }\n    },\n    \"subscription_title\": [\n        \"GetGenie Lifetime - Tier 3 ( Domain Limit: 5 )\",\n        \"2032-09-14\"\n    ],\n    \"data\": [\n        {\n            \"domain\": \"test1.ai\",\n            \"license\": \"GNI01-9ca8896dd2769e91194846488673b8b9dafcfe01\",\n            \"variantId\": \"1230\",\n            \"id\": \"313\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"test2.ai\",\n            \"license\": \"GNI01-f823177d8feb4a249fc414f927d2be4ceb262da6\",\n            \"variantId\": \"1230\",\n            \"id\": \"314\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"genie.test\",\n            \"license\": \"GNI01-06f9a11fc1a01501f2047501be51ee54545f2b99\",\n            \"variantId\": \"233\",\n            \"id\": \"47\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        }\n    ],\n    \"message\": [\n        \"Data fetched successfully.\"\n    ],\n    \"traceCode\": \"RGF0YSBmZXRjaGVkIHN1Y2Nlc3NmdWxseS4=\"\n}"
+						},
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/manage-sites/list",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"manage-sites",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 07:00:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"packages\": {\n        \"isFree\": false,\n        \"type\": \"subscription\",\n        \"domainLimit\": \"5\",\n        \"featureLimit\": {\n            \"AI Writing (Words)\": \"50000\",\n            \"Keyword Lookup\": \"300\",\n            \"SERP Competitor Analysis\": \"100\"\n        }\n    },\n    \"subscription_title\": [\n        \"GetGenie Lifetime - Tier 3 ( Domain Limit: 5 )\",\n        \"2032-09-14\"\n    ],\n    \"data\": [\n        {\n            \"domain\": \"test1.ai\",\n            \"license\": \"GNI01-9ca8896dd2769e91194846488673b8b9dafcfe01\",\n            \"variantId\": \"1230\",\n            \"id\": \"313\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"test2.ai\",\n            \"license\": \"GNI01-f823177d8feb4a249fc414f927d2be4ceb262da6\",\n            \"variantId\": \"1230\",\n            \"id\": \"314\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"genie.test\",\n            \"license\": \"GNI01-06f9a11fc1a01501f2047501be51ee54545f2b99\",\n            \"variantId\": \"233\",\n            \"id\": \"47\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        }\n    ],\n    \"message\": [\n        \"Data fetched successfully.\"\n    ],\n    \"traceCode\": \"RGF0YSBmZXRjaGVkIHN1Y2Nlc3NmdWxseS4=\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "manage sit",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-WP-Nonce",
+								"value": "{{wp_nonce}}",
+								"type": "text",
+								"description": "get it from your browser with the key 'wpApiSettings'"
+							},
+							{
+								"key": "Cookie",
+								"value": "{{cookie}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/manage-sit/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"manage-sit",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "no_api_found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/usage-stats/userr",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"usage-stats",
+										"userr"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 05:54:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"fail\",\n    \"message\": [\n        \"No route found.\"\n    ],\n    \"traceCode\": \"Tm8gcm91dGUgZm91bmQu\"\n}"
+						},
+						{
+							"name": "rest_no_route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/usage-stats/user-",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"usage-stats",
+										"user-"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 05:56:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"rest_no_route\",\n    \"message\": \"No route was found matching the URL and request method.\",\n    \"data\": {\n        \"status\": 404\n    }\n}"
+						},
+						{
+							"name": "Successfull response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/usage-stats/user",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"usage-stats",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 05:56:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"packages\": {\n        \"isFree\": false,\n        \"type\": \"subscription\",\n        \"domainLimit\": \"5\",\n        \"featureLimit\": {\n            \"AI Writing (Words)\": \"50000\",\n            \"Keyword Lookup\": \"300\",\n            \"SERP Competitor Analysis\": \"100\"\n        }\n    },\n    \"subscription_title\": [\n        \"GetGenie Lifetime - Tier 3 ( Domain Limit: 5 )\",\n        \"2032-09-14\"\n    ],\n    \"data\": [\n        {\n            \"domain\": \"test1.ai\",\n            \"license\": \"GNI01-9ca8896dd2769e91194846488673b8b9dafcfe01\",\n            \"variantId\": \"1230\",\n            \"id\": \"313\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"test2.ai\",\n            \"license\": \"GNI01-f823177d8feb4a249fc414f927d2be4ceb262da6\",\n            \"variantId\": \"1230\",\n            \"id\": \"314\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"genie.test\",\n            \"license\": \"GNI01-06f9a11fc1a01501f2047501be51ee54545f2b99\",\n            \"variantId\": \"233\",\n            \"id\": \"47\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        }\n    ],\n    \"message\": [\n        \"Data fetched successfully.\"\n    ],\n    \"traceCode\": \"RGF0YSBmZXRjaGVkIHN1Y2Nlc3NmdWxseS4=\"\n}"
+						},
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "bb82f73a9d",
+										"description": "get it from your browser with the key 'wpApiSettings'",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_c1aaa28887a77b72818f3251c031f672=xs-ziaur%7C1663297660%7CVEFqiebOpkNaeD4XFvotnhkdtsO7cLxGkRIqrGuCMiL%7Ce4b71ac80f314bfbe8fcb91ba86a7adfc3453f8f85e5b40de6214027057e0ee4; wp-settings-time-1=1663220093; tk_ai=woo%3A5RzSCw57vCNOsXY7Ge1GgD6Z; PHPSESSID=t55k89h6hg77pbbbai6ptptmhu; wp_woocommerce_session_c1aaa28887a77b72818f3251c031f672=1%7C%7C1663390036%7C%7C1663386436%7C%7Cea2516cdbc9bdce5e33015927e91ee11",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://wc-saas-manager.test/wp-json/v1/manage-sites/list",
+									"protocol": "http",
+									"host": [
+										"wc-saas-manager",
+										"test"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"manage-sites",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.1"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Sep 2022 07:00:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.30"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Link",
+									"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-WP-Total, X-WP-TotalPages, Link"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 11 Jan 1984 05:00:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "X-WP-Nonce",
+									"value": "bb82f73a9d"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"packages\": {\n        \"isFree\": false,\n        \"type\": \"subscription\",\n        \"domainLimit\": \"5\",\n        \"featureLimit\": {\n            \"AI Writing (Words)\": \"50000\",\n            \"Keyword Lookup\": \"300\",\n            \"SERP Competitor Analysis\": \"100\"\n        }\n    },\n    \"subscription_title\": [\n        \"GetGenie Lifetime - Tier 3 ( Domain Limit: 5 )\",\n        \"2032-09-14\"\n    ],\n    \"data\": [\n        {\n            \"domain\": \"test1.ai\",\n            \"license\": \"GNI01-9ca8896dd2769e91194846488673b8b9dafcfe01\",\n            \"variantId\": \"1230\",\n            \"id\": \"313\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"test2.ai\",\n            \"license\": \"GNI01-f823177d8feb4a249fc414f927d2be4ceb262da6\",\n            \"variantId\": \"1230\",\n            \"id\": \"314\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        },\n        {\n            \"domain\": \"genie.test\",\n            \"license\": \"GNI01-06f9a11fc1a01501f2047501be51ee54545f2b99\",\n            \"variantId\": \"233\",\n            \"id\": \"47\",\n            \"featureLimit\": {\n                \"keyword_lookup\": \"0\",\n                \"serp_analysis\": \"0\",\n                \"word_generate\": \"0\"\n            }\n        }\n    ],\n    \"message\": [\n        \"Data fetched successfully.\"\n    ],\n    \"traceCode\": \"RGF0YSBmZXRjaGVkIHN1Y2Nlc3NmdWxseS4=\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-WP-Nonce",
+								"value": "{{wp_nonce}}",
+								"type": "text",
+								"description": "get it from your browser with the key 'wpApiSettings'"
+							},
+							{
+								"key": "Cookie",
+								"value": "{{cookie}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/manage-sites/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"manage-sites",
+								"list"
 							]
 						}
 					},
@@ -7106,12 +8117,12 @@
 						"header": [
 							{
 								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
+								"value": "{{wp_nonce}}",
 								"type": "text"
 							},
 							{
 								"key": "Cookie",
-								"value": "{{login_cookie}}",
+								"value": "{{cookie}}",
 								"type": "text"
 							}
 						],
@@ -7120,13 +8131,11 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/meta_store/6/serpData",
+							"raw": "{{url}}/webview/meta_store/6/serpData",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"meta_store",
 								"6",
@@ -7134,7 +8143,51 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Doc Meta Store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "3ec804eabc",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "wordpress_logged_in_ac89649bc25ac377e05296683d83983b=admin%7C1679034304%7CeZoF0RP3QebFVGUiCAfQiOsQe0EDHUAi0WNMGyz4hUE%7C8ef604a459d287c2769ed2d369fc0fdc91aff42600e6792153ab1251f8495869",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://vdomain.io/wc-saas-manager/wp-json/v1/webview/meta_store/6/serpData",
+									"protocol": "http",
+									"host": [
+										"vdomain",
+										"io"
+									],
+									"path": [
+										"wc-saas-manager",
+										"wp-json",
+										"v1",
+										"webview",
+										"meta_store",
+										"6",
+										"serpData"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
 				},
 				{
 					"name": "Doc Meta Delete",
@@ -7143,23 +8196,21 @@
 						"header": [
 							{
 								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
+								"value": "{{wp_nonce}}",
 								"type": "text"
 							},
 							{
 								"key": "Cookie",
-								"value": "{{login_cookie}}",
+								"value": "{{cookie}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/meta_delete/1/keyword",
+							"raw": "{{url}}/webview/meta_delete/1/keyword",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"meta_delete",
 								"1",
@@ -7167,7 +8218,44 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Doc Meta Delete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_rest}}",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{login_cookie}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{wc-saas-manager}}/wp-json/v1/webview/meta_delete/1/keyword",
+									"host": [
+										"{{wc-saas-manager}}"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"webview",
+										"meta_delete",
+										"1",
+										"keyword"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
 				},
 				{
 					"name": "Doc Meta Get",
@@ -7179,12 +8267,12 @@
 						"header": [
 							{
 								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
+								"value": "{{wp_nonce}}",
 								"type": "text"
 							},
 							{
 								"key": "Cookie",
-								"value": "{{login_cookie}}",
+								"value": "{{cookie}}",
 								"type": "text"
 							}
 						],
@@ -7193,13 +8281,11 @@
 							"raw": "{\r\n    \"title\":\"hello doc 001\"\r\n}"
 						},
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/doc_meta?doc_id=1",
+							"raw": "{{url}}/webview/doc_meta?doc_id=1",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"doc_meta"
 							],
@@ -7211,7 +8297,52 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Doc Save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-WP-Nonce",
+										"value": "{{wp_rest}}",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "{{login_cookie}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"hello doc 001\"\r\n}"
+								},
+								"url": {
+									"raw": "{{wc-saas-manager}}/wp-json/v1/webview/save?doc_id=1",
+									"host": [
+										"{{wc-saas-manager}}"
+									],
+									"path": [
+										"wp-json",
+										"v1",
+										"webview",
+										"save"
+									],
+									"query": [
+										{
+											"key": "doc_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
 				},
 				{
 					"name": "Doc Save",
@@ -7220,34 +8351,33 @@
 						"header": [
 							{
 								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
+								"value": "{{wp_nonce}}",
 								"type": "text"
 							},
 							{
 								"key": "Cookie",
-								"value": "{{login_cookie}}",
+								"value": "{{cookie}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"hAAllo doc 7\",\r\n    \"content\":\"asd\"\r\n    \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n    \"title\":\"hello doc 001\"\r\n}"
 						},
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/save",
+							"raw": "{{url}}/webview/save?doc_id=1",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"save"
+							],
+							"query": [
+								{
+									"key": "doc_id",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -7300,17 +8430,20 @@
 				},
 				{
 					"name": "Doc List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [
 							{
 								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
+								"value": "{{wp_nonce}}",
 								"type": "text"
 							},
 							{
 								"key": "Cookie",
-								"value": "{{login_cookie}}",
+								"value": "{{cookie}}",
 								"type": "text"
 							}
 						],
@@ -7319,20 +8452,22 @@
 							"raw": "{\r\n    \"title\":\"hello doc 001\"\r\n}"
 						},
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/list?limit=21",
+							"raw": "{{url}}/webview/list?limit=1&page=2",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"list"
 							],
 							"query": [
 								{
 									"key": "limit",
-									"value": "21"
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
 								}
 							]
 						}
@@ -7387,12 +8522,12 @@
 						"header": [
 							{
 								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
+								"value": "{{wp_nonce}}",
 								"type": "text"
 							},
 							{
 								"key": "Cookie",
-								"value": "{{login_cookie}}",
+								"value": "{{cookie}}",
 								"type": "text"
 							}
 						],
@@ -7401,13 +8536,11 @@
 							"raw": "{\r\n    \"title\":\"hello doc 001\"\r\n}"
 						},
 						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview/delete?doc_id=1",
+							"raw": "{{url}}/webview/delete?doc_id=1",
 							"host": [
-								"{{wc-saas-manager}}"
+								"{{url}}"
 							],
 							"path": [
-								"wp-json",
-								"v1",
 								"webview",
 								"delete"
 							],
@@ -7465,805 +8598,6 @@
 							"body": ""
 						}
 					]
-				},
-				{
-					"name": "license active (webview)",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									"const sdk = require('postman-collection');\r",
-									"let url = new sdk.Url(pm.collectionVariables.get(\"getgenie\"));\r",
-									"pm.request.headers.add({key: 'User-Agent', value: `WordPress/6.1.1; ${url.getHost()}`});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-WP-Nonce",
-								"value": "{{wp_rest}}",
-								"type": "text"
-							},
-							{
-								"key": "Cookie",
-								"value": "{{login_cookie}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"license\": \"GNI01-7e73c4fe5385376dc5a424d897d960e0ebf13700\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{wc-saas-manager}}/wp-json/v1/webview-license/license_active",
-							"host": [
-								"{{wc-saas-manager}}"
-							],
-							"path": [
-								"wp-json",
-								"v1",
-								"webview-license",
-								"license_active"
-							]
-						},
-						"description": "This request for license activation of webview. which end point is as same as getgenie license. Just prefix is change from \"manage-sites\" to \"webview\". "
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Playground",
-			"item": [
-				{
-					"name": "Chat",
-					"item": [
-						{
-							"name": "create or update",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_nonce}}",
-										"type": "text"
-									},
-									{
-										"key": "Cookie",
-										"value": "{{cookie}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": 6,\r\n    \"input\": {\r\n        \"keyword\": \"ai writers\",\r\n        \"inputContext\": \"\"\r\n    }, \r\n    \"messages\": [\r\n    {\r\n      \"role\": \"user\", \r\n      \"content\": \"I'm board, what should we do?\"\r\n    },\r\n    {\r\n      \"role\": \"assistant\",\r\n      \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\r\n    },\r\n    {\r\n      \"role\": \"user\", \r\n      \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\r\n    }\r\n  ],\r\n    \"templateSlug\": \"blog-wizard-title\",\r\n    \"keyword\": \"ai writers\",\r\n    \"inputContext\": \"\",\r\n    \"selectedLanguage\": \"en\",\r\n    \"creativity\": 3,\r\n    \"selectedTone\": \"Standard\",\r\n    \"resultCount\": 2,\r\n    \"output\": [\r\n        \"Unleashing the Power of AI Writers: What You Need to Know\",\r\n        \"Unveiling the Future of Content Creation: AI Writers\"\r\n    ],\r\n    \"templateType\": \"writer-wizard\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/playground-chat/store",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"playground-chat",
-										"store"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "create or update",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "X-WP-Nonce",
-												"value": "{{wp_nonce}}",
-												"type": "text"
-											},
-											{
-												"key": "Cookie",
-												"value": "{{cookie}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"input\": {\r\n        \"keyword\": \"ai writers\",\r\n        \"inputContext\": \"\"\r\n    }, \r\n    \"messages\": [\r\n    {\r\n      \"role\": \"user\", \r\n      \"content\": \"I'm board, what should we do?\"\r\n    },\r\n    {\r\n      \"role\": \"assistant\",\r\n      \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\r\n    },\r\n    {\r\n      \"role\": \"user\", \r\n      \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\r\n    }\r\n  ],\r\n    \"templateSlug\": \"blog-wizard-title\",\r\n    \"keyword\": \"ai writers\",\r\n    \"inputContext\": \"\",\r\n    \"selectedLanguage\": \"en\",\r\n    \"creativity\": 3,\r\n    \"selectedTone\": \"Standard\",\r\n    \"resultCount\": 2,\r\n    \"output\": [\r\n        \"Unleashing the Power of AI Writers: What You Need to Know\",\r\n        \"Unveiling the Future of Content Creation: AI Writers\"\r\n    ],\r\n    \"templateType\": \"writer-wizard\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/playground-chat/store",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"playground-chat",
-												"store"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.23.1"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 03 Apr 2023 09:46:56 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.4.30"
-										},
-										{
-											"key": "X-Robots-Tag",
-											"value": "noindex"
-										},
-										{
-											"key": "Link",
-											"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "X-WP-Total, X-WP-TotalPages, Link"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
-										},
-										{
-											"key": "Expires",
-											"value": "Wed, 11 Jan 1984 05:00:00 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, must-revalidate, max-age=0"
-										},
-										{
-											"key": "X-WP-Nonce",
-											"value": "0fcefc9253"
-										},
-										{
-											"key": "Allow",
-											"value": "GET, POST, PUT, PATCH, DELETE"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user_id\": 46,\n        \"title\": \"blog-wizard-title-2023-04-03 09:46:56\",\n        \"messages\": \"[{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"I'm board, what should we do?\\\"},{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":\\\"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\\\"},{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"idk, what type of movies do you like? i like adult ones, hehehe\\\"}]\",\n        \"template_slug\": \"blog-wizard-title\",\n        \"created_at\": \"03-04-2023 09:46:56\",\n        \"updated_at\": \"03-04-2023 09:46:56\",\n        \"ID\": 6\n    },\n    \"message\": [\n        \"Chat created successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
-								},
-								{
-									"name": "create or update",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "X-WP-Nonce",
-												"value": "{{wp_nonce}}",
-												"type": "text"
-											},
-											{
-												"key": "Cookie",
-												"value": "{{cookie}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"id\": 6,\r\n    \"input\": {\r\n        \"keyword\": \"ai writers\",\r\n        \"inputContext\": \"\"\r\n    }, \r\n    \"messages\": [\r\n    {\r\n      \"role\": \"user\", \r\n      \"content\": \"I'm board, what should we do?\"\r\n    },\r\n    {\r\n      \"role\": \"assistant\",\r\n      \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\r\n    },\r\n    {\r\n      \"role\": \"user\", \r\n      \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\r\n    }\r\n  ],\r\n    \"templateSlug\": \"blog-wizard-title\",\r\n    \"keyword\": \"ai writers\",\r\n    \"inputContext\": \"\",\r\n    \"selectedLanguage\": \"en\",\r\n    \"creativity\": 3,\r\n    \"selectedTone\": \"Standard\",\r\n    \"resultCount\": 2,\r\n    \"output\": [\r\n        \"Unleashing the Power of AI Writers: What You Need to Know\",\r\n        \"Unveiling the Future of Content Creation: AI Writers\"\r\n    ],\r\n    \"templateType\": \"writer-wizard\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/playground-chat/store",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"playground-chat",
-												"store"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.23.1"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 03 Apr 2023 09:47:59 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.4.30"
-										},
-										{
-											"key": "X-Robots-Tag",
-											"value": "noindex"
-										},
-										{
-											"key": "Link",
-											"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "X-WP-Total, X-WP-TotalPages, Link"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
-										},
-										{
-											"key": "Expires",
-											"value": "Wed, 11 Jan 1984 05:00:00 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, must-revalidate, max-age=0"
-										},
-										{
-											"key": "X-WP-Nonce",
-											"value": "0fcefc9253"
-										},
-										{
-											"key": "Allow",
-											"value": "GET, POST, PUT, PATCH, DELETE"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": \"6\",\n        \"user_id\": \"46\",\n        \"title\": \"blog-wizard-title-2023-04-03 09:47:59\",\n        \"messages\": \"[{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"I'm board, what should we do?\\\"},{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":\\\"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\\\"},{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"idk, what type of movies do you like? i like adult ones, hehehe\\\"}]\",\n        \"template_slug\": \"blog-wizard-title\",\n        \"created_at\": \"03-04-2023 09:47:59\",\n        \"updated_at\": \"03-04-2023 09:47:59\"\n    },\n    \"message\": [\n        \"Chat updated successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
-								}
-							]
-						},
-						{
-							"name": "list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_nonce}}",
-										"equals": true
-									},
-									{
-										"key": "Cookie",
-										"value": "{{cookie}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/playground-chat/list?page=2&limit=2",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"playground-chat",
-										"list"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "2"
-										},
-										{
-											"key": "limit",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "success response",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "X-WP-Nonce",
-												"value": "{{wp_nonce}}",
-												"equals": true
-											},
-											{
-												"key": "Cookie",
-												"value": "{{cookie}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/playground-chat/list",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"playground-chat",
-												"list"
-											],
-											"query": [
-												{
-													"key": "page",
-													"value": "2",
-													"disabled": true
-												},
-												{
-													"key": "limit",
-													"value": "2",
-													"disabled": true
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.23.1"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 03 Apr 2023 09:45:41 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.4.30"
-										},
-										{
-											"key": "X-Robots-Tag",
-											"value": "noindex"
-										},
-										{
-											"key": "Link",
-											"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "X-WP-Total, X-WP-TotalPages, Link"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
-										},
-										{
-											"key": "Expires",
-											"value": "Wed, 11 Jan 1984 05:00:00 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, must-revalidate, max-age=0"
-										},
-										{
-											"key": "X-WP-Nonce",
-											"value": "0fcefc9253"
-										},
-										{
-											"key": "Allow",
-											"value": "GET, POST, PUT, PATCH, DELETE"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"playground_chats\": [\n            {\n                \"id\": \"5\",\n                \"messages\": [\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"I'm board, what should we do?\"\n                    },\n                    {\n                        \"role\": \"assistant\",\n                        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    }\n                ],\n                \"templateSlug\": \"blog-wizard-title\",\n                \"date\": \"03-04-2023 09:44:53\",\n                \"user\": \"46\"\n            },\n            {\n                \"id\": \"4\",\n                \"messages\": [\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"I'm board, what should we do?\"\n                    },\n                    {\n                        \"role\": \"assistant\",\n                        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    }\n                ],\n                \"templateSlug\": \"blog-wizard-title\",\n                \"date\": \"03-04-2023 09:42:43\",\n                \"user\": \"46\"\n            },\n            {\n                \"id\": \"3\",\n                \"messages\": [\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"I'm board, what should we do?\"\n                    },\n                    {\n                        \"role\": \"assistant\",\n                        \"content\": \"Hmm, I'm not sure. What are you in the mood for? We could play a game, watch a movie, listen to music, or maybe do some art together? Or if you want to just talk, we could get to know each other better or have a deep conversation about something?\"\n                    },\n                    {\n                        \"role\": \"user\",\n                        \"content\": \"idk, what type of movies do you like? i like adult ones, hehehe\"\n                    }\n                ],\n                \"templateSlug\": \"blog-wizard-title\",\n                \"date\": \"03-04-2023 09:07:27\",\n                \"user\": \"46\"\n            },\n            {\n                \"id\": \"2\",\n                \"messages\": \"This is message\",\n                \"templateSlug\": \"This is slug title\",\n                \"date\": \"03-04-2023 09:02:09\",\n                \"user\": \"46\"\n            },\n            {\n                \"id\": \"1\",\n                \"messages\": \"This is message\",\n                \"templateSlug\": \"This is slug title\",\n                \"date\": \"03-04-2023 09:01:49\",\n                \"user\": \"46\"\n            }\n        ],\n        \"total_pages\": 1\n    },\n    \"message\": [\n        \"Fetched messages list successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
-								}
-							]
-						},
-						{
-							"name": "clear",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_nonce}}",
-										"type": "text"
-									},
-									{
-										"key": "Cookie",
-										"value": "{{cookie}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\": 1\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/playground-chat/clear",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"playground-chat",
-										"clear"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "clear",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "X-WP-Nonce",
-												"value": "{{wp_nonce}}",
-												"type": "text"
-											},
-											{
-												"key": "Cookie",
-												"value": "{{cookie}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"id\": 1\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/playground-chat/clear",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"playground-chat",
-												"clear"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.23.1"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 03 Apr 2023 09:48:27 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.4.30"
-										},
-										{
-											"key": "X-Robots-Tag",
-											"value": "noindex"
-										},
-										{
-											"key": "Link",
-											"value": "<http://wc-saas-manager.test/wp-json/>; rel=\"https://api.w.org/\""
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Access-Control-Expose-Headers",
-											"value": "X-WP-Total, X-WP-TotalPages, Link"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type"
-										},
-										{
-											"key": "Expires",
-											"value": "Wed, 11 Jan 1984 05:00:00 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, must-revalidate, max-age=0"
-										},
-										{
-											"key": "X-WP-Nonce",
-											"value": "0fcefc9253"
-										},
-										{
-											"key": "Allow",
-											"value": "GET, POST, PUT, PATCH, DELETE"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"total_chats\": 1,\n        \"total_deleted_chats\": 1\n    },\n    \"message\": [\n        \"Cleared all chats successfully.\"\n    ],\n    \"traceCode\": \"\"\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "History",
-					"item": [
-						{
-							"name": "store",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_nonce}}",
-										"type": "text"
-									},
-									{
-										"key": "Cookie",
-										"value": "{{cookie}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \r\n    \"input\":\"Asgbfgd\",\r\n    \"output\":\"output-Asdsa\",\r\n    \"creativity_level\":\"5\",\r\n    \"template_slug\":\"Asdsa-slug\",\r\n    \"template_title\":\"Adsaaaaa\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/playground-history/store",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"playground-history",
-										"store"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_rest}}",
-										"equals": true,
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"value": "{{login_cookie}}",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{wc-saas-manager}}/wp-json/v1/playground-history/list?limit=2&page=2",
-									"host": [
-										"{{wc-saas-manager}}"
-									],
-									"path": [
-										"wp-json",
-										"v1",
-										"playground-history",
-										"list"
-									],
-									"query": [
-										{
-											"key": "limit",
-											"value": "2"
-										},
-										{
-											"key": "page",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "clear",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-WP-Nonce",
-										"value": "{{wp_rest}}",
-										"type": "text",
-										"disabled": true
-									},
-									{
-										"key": "Cookie",
-										"value": "{{login_cookie}}",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{wc-saas-manager}}/wp-json/v1/playground/history/clear",
-									"host": [
-										"{{wc-saas-manager}}"
-									],
-									"path": [
-										"wp-json",
-										"v1",
-										"playground",
-										"history",
-										"clear"
-									]
-								}
-							},
-							"response": []
-						}
-					]
 				}
 			]
 		}
@@ -8299,11 +8633,11 @@
 		},
 		{
 			"key": "login_cookie",
-			"value": "wordpress_logged_in_ac89649bc25ac377e05296683d83983b=admin%7C1680579339%7CjaQnmVt5bdilK4Z5kVmEdUIdp7SklAPYd4ihHhrSowM%7C98f14ecb52ec630c769f275aba639ee8504bac9dca00dfa40e91bd317a071ae3"
+			"value": "wordpress_logged_in_ac89649bc25ac377e05296683d83983b=admin%7C1679034304%7CeZoF0RP3QebFVGUiCAfQiOsQe0EDHUAi0WNMGyz4hUE%7C8ef604a459d287c2769ed2d369fc0fdc91aff42600e6792153ab1251f8495869"
 		},
 		{
 			"key": "wp_rest",
-			"value": "23cc1e26c0"
+			"value": "3ec804eabc"
 		},
 		{
 			"key": "http://vdomain.io/getgenie",
