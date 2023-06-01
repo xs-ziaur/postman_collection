@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "feda0166-f3a2-4fc6-a6f9-4123896ad23a",
+		"name": "logger-getgenie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1711936"
+	},
+	"item": [
+		{
+			"name": "subscription cancel reason log keep",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"subscription_id\": 1,\n    \"reason\": \"price issue\",\n    \"description\": \"price issue details\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "logger.test/task/log/sub_cancel_reason",
+					"host": [
+						"logger",
+						"test"
+					],
+					"path": [
+						"task",
+						"log",
+						"sub_cancel_reason"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"subscription_id\": 1,\n    \"reason\": \"price issue\",\n    \"description\": \"price issue details\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "logger.test/task/log/sub_cancel_reason",
+							"host": [
+								"logger",
+								"test"
+							],
+							"path": [
+								"task",
+								"log",
+								"sub_cancel_reason"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.23.4"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jun 2023 04:59:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.33"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "task completed"
+				}
+			]
+		},
+		{
+			"name": "subs cancel reson on production",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"subscription_id\": 1,\n    \"reason\": \"price issue\",\n    \"description\": \"price issue details\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app.getgenie.ai/logger/task/log/sub_cancel_reason",
+					"protocol": "https",
+					"host": [
+						"app",
+						"getgenie",
+						"ai"
+					],
+					"path": [
+						"logger",
+						"task",
+						"log",
+						"sub_cancel_reason"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "subs cancel reson on production",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"subscription_id\": 1,\n    \"reason\": \"price issue\",\n    \"description\": \"price issue details\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.getgenie.ai/logger/task/log/sub_cancel_reason",
+							"protocol": "https",
+							"host": [
+								"app",
+								"getgenie",
+								"ai"
+							],
+							"path": [
+								"logger",
+								"task",
+								"log",
+								"sub_cancel_reason"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jun 2023 06:00:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-turbo-charged-by",
+							"value": "LiteSpeed"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=hhXboId1vNTysqmSN61I%2FWT6bDpPV0DJW1sXdwwTC%2FVc6o9YLPkODEooqja6PqpZG2%2F9eVHATxBzHSpkCdqQXbh7wdDiholcl5GuABXoEeeleMI8HHzovC1oUsNSd5LcrhM%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7d053be1c902ba59-DAC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "task completed"
+				}
+			]
+		}
+	]
+}
